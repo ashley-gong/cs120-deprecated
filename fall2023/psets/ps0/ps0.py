@@ -58,6 +58,8 @@ def calculate_sizes(v):
 # ... in disjoint trees that all have at most n/2 vertices
 # Runtime: O(h)
 def find_vertex(r):
+    if not r:
+        return None
     total = r.size
     while r:
         left, right = None, None
