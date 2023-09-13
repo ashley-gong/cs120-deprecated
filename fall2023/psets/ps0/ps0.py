@@ -46,6 +46,19 @@ def calculate_sizes(v):
 
     return v.size
 
+    # Set each node size to 1 to begin with
+    v.size = 1
+    # Base case is a leaf node - simply return size if no children
+    if not v.left and not v.right:
+        return v.size
+    # Add current node to size calculation
+    if v.left:
+        v.size += calculate_sizes(v.left)
+    if v.right:
+        v.size += calculate_sizes(v.right)
+
+    return v.size
+
 
 #
 # Problem 1c
